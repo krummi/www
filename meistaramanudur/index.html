@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Meistaramánuður á Ofanleitinu</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css'>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+    <link href="styles/tipsy.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="scripts/highcharts.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+    // Create calendars.
+    $('#wakeup-hrafn').append(generateCalendar(true,  [1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 
+	[0, "Alltof slæmur dagur til að vakna klukkan hálf átta."], 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1]));
+    $('#wakeup-haukur').append(generateCalendar(true, [1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 
+	[0, "Alltof slæmur dagur til að vakna klukkan hálf átta."], 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1]));
+    $('#wakeup-hoddi').append(generateCalendar(true,  [0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 
+	[0, "Alltof slæmur dagur til að vakna klukkan hálf átta."], 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1]));
+
+    $('#gym-hrafn').append(generateCalendar(false,  [1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, [0, "Verkefnaskil dauðans. :("], [0, "Verkefnaskil dauðans. :("], 1, 1, [0, "Of þunnur."], [0, "Verkefnaskil dauðans. :("], 1, 1, 1, 0, [0, "Úti á landi."], [0, "Úti á landi."], [0, "Úti á landi."], 1, 1]));
+    $('#gym-haukur').append(generateCalendar(false, [1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], [0, "Haukur þjáist af bakmeiðslum. :("], 1, 1, 1, 0, 0, 0, 0, 0, 0]));
+    $('#gym-hoddi').append(generateCalendar(false,  [1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1]));
+
+    // Create charts.
+    createChart("weight-hrafn", 76, 80, "Þyngd (kg.)", "green", [
+        [Date.UTC(2012, 9,  1),  76.7],
+        [Date.UTC(2012, 9,  2),  76.7],
+        [Date.UTC(2012, 9,  3),  76.1],
+	[Date.UTC(2012, 9,  4),  76.5],
+	[Date.UTC(2012, 9,  5),  76.4], 
+	[Date.UTC(2012, 9,  6),  76.5],
+	[Date.UTC(2012, 9, 10),  77.2],
+	[Date.UTC(2012, 9, 11),  77.5], 
+	[Date.UTC(2012, 9, 15),  76.7], 
+	[Date.UTC(2012, 9, 19),  77.5],
+	[Date.UTC(2012, 9, 23),  77.4],
+	[Date.UTC(2012, 9, 24),  77.5],
+	[Date.UTC(2012, 9, 29),  77.8]
+    ], function() {
+        return Highcharts.dateFormat('%e. október', this.x) +': '+ this.y + ' kg.';
+    });
+
+    createChart("pullup-haukur", 10, 20, "Fjöldi (stk.)", "blue", [
+        [Date.UTC(2012, 9,  1),  12],
+	[Date.UTC(2012, 9, 11),  12]
+    ], function() {
+        return Highcharts.dateFormat('%e október', this.x) +': '+ this.y + ' stk.';
+    });
+
+    // Add tooltips.
+    $('img[title]').tipsy({gravity: 'w'});
+});
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Meistaramánuðurinn á Ofanleitinu</h1>
+        </div>
+        <div id="blocks">
+            <div class="container-block">
+                <div class="block right-border">
+                    <h2>Haukur</h2>
+                    <div class="section">
+                        <h3>Vakna kl. 07:30 á virkum dögum</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="wakeup-haukur"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>Mæta 5 sinnum í ræktina í viku</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="gym-haukur"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>Gera 20 upphýfingar í einu setti</h3>
+                        <div class="section-body">
+                            <div id="pullup-haukur" style="width: 309px; height: 200px; margin: 0 auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block">
+                <div class="block right-border">
+                    <h2>Hrafn</h2>
+                    <div class="section">
+                        <h3>Vakna kl. 07:30 á virkum dögum</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="wakeup-hrafn"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>Mæta 5 sinnum í ræktina í viku</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="gym-hrafn"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>Verða 80 kg. í fyrsta sinn</h3>
+                        <div class="section-body">
+                            <div id="weight-hrafn" style="width: 309px; height: 200px; margin: 0 auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block">
+                <div class="block">
+                    <h2>Hörður</h2>
+                    <div class="section">
+                        <h3>Vakna kl. 07:30 á virkum dögum</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="wakeup-hoddi"></div>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <h3>Mæta 5 sinnum í ræktina í viku</h3>
+                        <div class="section-body">
+                            <div class="calendar" id="gym-hoddi"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

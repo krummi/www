@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike,  sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+html {
+    font-family: 'lucida grande';
+    font-size: 15px;
+}
+body,
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#ededed;
+    background: url('img/bg.jpg');
+}
+#wrap {
+    border: solid #ddd;
+    border-width: 0 0 0 3px;
+    width:750px;
+    margin:0 auto;
+    background:#ededed;
+    box-shadow: -9px 0px 12px -2px #ccc inset;
+    height: 100%;
+}
+#nav {
+    padding:5px 10px;
+    background:#c99;
+}
+#nav ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+#nav li {
+    display:inline;
+    margin:0;
+    padding:0;
+}
+#header {
+    padding:5px 10px;
+
+}
+#main {
+    float:left;
+    width:270px;
+    background:#ededed;
+    box-shadow: -9px 0px 12px -2px #ccc inset;
+    height: 100%;
+}
+#sidebar {
+    float:right;
+    width:440px;
+    padding:10px 10px;
+}
+#footer {
+    clear:both;
+    padding:5px 10px;
+    background:#cc9;
+}
+#footer p {
+    margin:0;
+}
+* html #footer {
+    height: 1px;
+}
+#inner {
+    padding: 10px;
+    margin-left: 5px;
+}
+#sidebar-inner {
+    padding-right: 10px;
+}
+#ingredients td, th {
+    height: 30px;
+}
+h3 {
+    font-weight: bold;
+    font-size: 1.0em;
+    margin-top: 4px;
+}
+#ingredients {
+    border-collapse: collapse;
+}
+.quantity {
+    text-align: right;
+}
+.item {
+    padding-left: 14px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+ol {
+    list-style: decimal;
+    margin-left: 22px;
+}
+ol li {
+    margin: 15px 0;
+}
+ol li p {
+        line-height: 23px;
+}
+hr {
+    border: solid #ccc;
+    border-width: 2px 0 0 0;
+    margin-bottom: 15px;
+    margin-top: 17px;
+}

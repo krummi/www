@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Staðan | Þriðjudagsboltinn</title>
+    
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+var standings = {
+    'Hrafn Eiríksson':             [ 1, -1, 2,  1,  1,  0,  0,  1, 2,  1,  0,  0,  1, -1,  1, -1, -1, 2,  1,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  0],
+    'Sindri Snær Þorsteinsson':    [ 1, -1, 2,  0,  1,  0, -1,  1, 2,  0,  0,  0,  1,  0,  1, -1,  0, 0, -1,  0,  0,  0,  1,  0, -1,  0, -1,  0,  0,  0],
+    'Einar Haraldsson':            [ 1,  1, 0,  0,  1, -1,  1, -1, 2, -1,  0,  1,  0,  0, -1,  1, -1, 0, -1, -1, -1, -1, -1,  1, -1,  1, -1, -1,  0,  1],
+    'Ólafur Ingi Guðmundsson':     [ 1,  0, 2, -1, -1,  1, -1, -1, 2, -1,  0,  0,  0, -1,  1,  1, -1, 2, -1,  0,  0,  0,  1,  1, -1,  1,  1,  1,  1,  0],
+    'Gunnar Hersir Benediktsson':  [ 1,  1, 2,  0, -1,  1,  1, -1, 2, -1,  1,  1, -1,  1,  1,  1, -1, 2, -1,  1,  1, -1, -1,  0,  1, -1,  1, -1,  1,  0],
+    'Þorsteinn Atli Georgsson':    [-1,  1, 0,  1,  1, -1,  1, -1, 2, -1,  0,  0, -1,  1,  0,  0,  0, 0,  0, -1,  1,  0, -1, -1,  0,  1, -1, -1,  1, -1],
+    'Magnús Þórður Rúnarsson':     [-1, -1, 2,  1, -1, -1, -1,  0, 2,  1, -1, -1,  1,  1, -1,  1,  1, 2,  1,  0, -1, -1, -1, -1,  1,  1,  1, -1,  1, -1],
+    'Ragnar Örn Kormáksson':       [ 0,  1, 2, -1, -1,  1,  1,  1, 2,  1,  1, -1,  1,  1, -1,  1,  0, 0,  1, -1, -1, -1,  1,  0, -1, -1, -1, -1, -1,  1],
+    'Rúrik Karl Björnsson':        [-1,  1, 2,  1, -1,  1,  1, -1, 2,  1,  1, -1, -1,  1,  1, -1,  1, 2, -1,  1, -1, -1, -1, -1,  1, -1, -1,  0,  0,  0],
+    'Matthías Heimisson':          [ 0, -1, 2,  0,  1, -1, -1,  1, 2, -1, -1,  1,  1, -1, -1,  0,  0, 0,  0, -1,  1,  1,  1,  1, -1,  1,  1,  1,  1,  1],
+    'Georg Ólafsson':              [-1,  1, 2, -1, -1,  1,  1,  1, 2, -1,  0,  1,  1,  0,  1,  0,  1, 2,  1, -1, -1,  1, -1, -1, -1,  1,  1, -1, -1,  1],
+    'Jóhann Már Helgason':         [-1, -1, 2,  0,  1,  0, -1, -1, 0,  0, -1, -1, -1, -1, -1,  0,  0, 0,  1,  1,  0,  0, -1,  0,  0, -1,  1,  1,  0, -1],
+    'Arnór Skúli Arnarson':        [-1,  0, 0, -1, -1, -1, -1,  0, 2,  0,  0,  1,  0,  0, -1,  0,  0, 2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0], 
+    'Kristján Freyr Kristjánsson': [ 0,  0, 2,  0,  1, -1,  1,  0, 2,  1,  1,  1, -1,  1,  0,  0,  0, 0,  0,  0, -1, -1,  1, -1,  1, -1, -1,  0, -1,  0],
+    'Helgi Hrafn Kormáksson':      [ 0,  0, 0,  0,  0,  0,  0,  0, 0,  0,  0,  0, -1, -1, -1, -1,  0, 2, -1,  1, -1,  0,  1,  0, -1, -1, -1,  0, -1, -1],
+    'Sindri Sverisson':            [ 0,  0, 2, -1,  0,  1,  0,  1, 2,  1, -1,  1, -1,  1,  1, -1,  1, 2, -1,  1, -1,  1,  0,  1,  1, -1,  0,  1, -1, -1],
+    'Olgeir Halldórsson':          [ 1, -1, 2, -1,  0,  0,  0,  0, 0,  0,  0,  0,  0,  0,  0, -1,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    'Haukur Halldórsson':          [ 1,  1, 2,  1,  0,  0,  0,  0, 0,  0,  0,  0,  0,  0,  0,  1,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+}
+
+var goals = {
+    'Hrafn Eiríksson':             [3, 0, 0, 1, 1, 0, 0, 2, 3, 1, 0, 0, 1, 0, 2, 0, 3, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0],
+    'Sindri Snær Þorsteinsson':    [2, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0],
+    'Einar Haraldsson':            [3, 2, 0, 0, 0, 0, 2, 1, 1, 0, 0, 2, 0, 0, 0, 1, 4, 0, 0, 2, 0, 2, 0, 5, 0, 2, 1, 0, 0, 3],
+    'Ólafur Ingi Guðmundsson':     [3, 0, 1, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 4, 4, 3, 8, 2, 0, 0, 0, 0, 0, 5, 0, 0, 3, 0, 1, 0],
+    'Gunnar Hersir Benediktsson':  [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0],
+    'Þorsteinn Atli Georgsson':    [1, 4, 0, 6, 0, 4, 2, 2, 3, 0, 0, 0, 4, 3, 0, 0, 0, 0, 0, 0, 5, 0, 0, 4, 0, 4, 0, 0, 1, 0],
+    'Magnús Þórður Rúnarsson':     [1, 0, 1, 3, 0, 0, 0, 0, 2, 0, 0, 3, 0, 2, 0, 0, 5, 1, 0, 0, 0, 1, 0, 0, 2, 2, 2, 0, 1, 1],
+    'Ragnar Örn Kormáksson':       [0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 3, 2, 1, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0],
+    'Rúrik Karl Björnsson':        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'Matthías Heimisson':          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'Georg Ólafsson':              [0, 1, 1, 0, 0, 4, 0, 5, 2, 0, 0, 1, 1, 0, 0, 0, 5, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2, 0, 1, 0],
+    'Jóhann Már Helgason':         [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'Arnór Skúli Arnarson':        [0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+    'Kristján Freyr Kristjánsson': [0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 3, 0],
+    'Helgi Hrafn Kormáksson':      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0],
+    'Sindri Sverisson':            [0, 0, 0, 3, 0, 1, 0, 1, 0, 0, 2, 1, 0, 0, 1, 0, 3, 1, 2, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 2],
+    'Olgeir Halldórsson':          [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'Haukur Halldórsson':          [1, 1, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+}
+
+function roundNumber(number, digits) {
+    var multiple = Math.pow(10, digits);
+    var rndedNum = Math.round(number * multiple) / multiple;
+    return rndedNum;
+}
+
+console.log(goals['Hrafn Eiríksson']);
+
+var league = [];
+
+for (var key in standings) {
+    if (standings.hasOwnProperty(key)) {
+
+        // counts goals
+        var goals_sum = 0;
+        for (var i = 0; i < goals[key].length; i++) {
+            goals_sum += goals[key][i];
+        }
+
+        // counts w, d, l
+        var player = standings[key];
+        var w = 0, d = 0, l = 0;
+        for (var i = 0; i < player.length; i++) {
+            if      (player[i] == -1) l += 1; // -1 = loss
+            else if (player[i] ==  1) w += 1; //  1 = draw
+            else if (player[i] ==  2) d += 1; //  2 = win
+        }
+        var played    = w + d + l;
+        var ratio     = (w / played) * 100;
+        var ratio_str = roundNumber(ratio, 1) + '%';
+        var points    = (w * 3) + d;
+        league.push({'name': key, 'played': played, 'w': w, 'd': d, 'l': l, 'goals': goals_sum, 
+                     'ratio': ratio, 'ratio_str': ratio_str, 'ud': '&nbsp;', 'points': points});
+        league.sort(function(first, second) { 
+            if (second['points'] == first['points'])
+                return second['ratio'] - first['ratio'];
+            return second['points'] - first['points'];
+        });
+    }
+}
+
+$(document).ready(function() {
+    for (var x = 0; x < league.length; x++) {
+        var out = [];
+        if      (x == 0)                 out.push('<tr class="first">');
+        else if (x == 1 || x == 2)       out.push('<tr class="second">');
+        else if (x == league.length - 1) out.push('<tr class="last">');
+        else if (x == league.length - 2) out.push('<tr class="last">');
+        else if (x == league.length - 3) out.push('<tr class="last">');
+        else                             out.push('<tr class="other">');
+
+        out.push('<td>' + (x + 1) + '</td>');
+
+        var keys = ['name', 'played', 'w', 'd', 'l', 'ratio_str', 'goals', 'points'];
+        for (var k = 0; k < keys.length; k++) {
+            out.push('<td class="col-' + keys[k] + '">' + league[x][keys[k]] + '</td>');
+        }
+
+        out.push('</tr>');
+        $('#league tbody').append($(out.join('')));
+    }
+});
+    </script>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="main">
+        <table id="league">
+            <thead>
+                <tr>
+                    <th class="col-pos">#</th>
+                    <th class="col-club">NAME</th>
+                    <th class="col-p">P</th>
+                    <th class="col-w">W</th>
+                    <th class="col-d">D</th>
+                    <th class="col-l">L</th>
+                    <th class="col-gd">%</th>
+                    <th class="col-goals">G</th>
+                    <th class="col-pts">PTS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th class="col-pos">#</th>
+                    <th class="col-club">NAME</th>
+                    <th class="col-p">P</th>
+                    <th class="col-w">W</th>
+                    <th class="col-d">D</th>
+                    <th class="col-l">L</th>
+                    <th class="col-gd">%</th>
+                    <th class="col-goals">G</th>
+                    <th class="col-pts">PTS</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
