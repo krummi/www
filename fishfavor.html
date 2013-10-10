@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Fishfavor specification</title>
+</head>
+
+<body>
+
+  <div id="readme" class="blob instapaper_body">
+    <div class="markdown-body">
+      <h1>
+<a name="fishfavor" class="anchor" href="#fishfavor"><span class="octicon octicon-link"></span></a>Fishfavor</h1>
+
+<h2>
+<a name="non-technical-details" class="anchor" href="#non-technical-details"><span class="octicon octicon-link"></span></a>Non-technical details</h2>
+
+<p>There are some basic components that are needed in order to make the system functional. The following is a list of them in descending order of complexity:</p>
+
+<ul>
+<li><p>[ ] <em>GPX importer</em>: The component that handles the GPX files that Trackwell sends. It will take a GPX file as an input and create an entry in the database corresponding to that fishing trip. It may or may not create QR codes as well - is that even possible?</p></li>
+<li><p>[ ] <em>QR code explorer</em>: This component provides fisheries/admins with a QR code explorer where they can browse boats and trips and get a list of QR codes for each of the species that was fished in a particular trip.</p></li>
+<li><p>[ ] <em>QR Viewer</em>: The consumer-facing site where people go when they actually scan a QR code in the store. Should obviously be optimized for mobile browsers.</p></li>
+<li><p>[ ] <em>The main page</em>: The page that will be displayed when we enter <a href="http://www.fishflavor.org">http://www.fishflavor.org</a>. This one is somewhat ready but still needs the main section, i.e. the "Find my fish" section.</p></li>
+</ul><h2>
+<a name="technical-details" class="anchor" href="#technical-details"><span class="octicon octicon-link"></span></a>Technical details</h2>
+
+<h3>
+<a name="public-endpoints-needed" class="anchor" href="#public-endpoints-needed"><span class="octicon octicon-link"></span></a>Public endpoints needed</h3>
+
+<ul>
+<li>
+<a href="http://www.fishfavor.org/c/:qr">http://www.fishfavor.org/c/:qr</a> - for the retrieval of data regarding some fish.</li>
+<li>
+<a href="http://www.fishfavor.org/">http://www.fishfavor.org/</a> - the main site.</li>
+</ul><h3>
+<a name="private-authenticated-endpoints-needed" class="anchor" href="#private-authenticated-endpoints-needed"><span class="octicon octicon-link"></span></a>Private (authenticated) endpoints needed</h3>
+
+<ul>
+<li>
+<a href="http://www.fishfavor.org/data/gpx-importer">http://www.fishfavor.org/data/gpx-importer</a> - an Trackwell GPX importer.</li>
+<li>
+<a href="http://www.fishfavor.org/manage/">http://www.fishfavor.org/manage/</a> - an endpoint where authenticated users can browse, view and print QR codes.</li>
+</ul><h3>
+<a name="data-model" class="anchor" href="#data-model"><span class="octicon octicon-link"></span></a>Data model</h3>
+
+<ul>
+<li>Trip
+
+<ul>
+<li>start_harbor:integer -&gt; foreign key reference to the "start" harbor.</li>
+<li>landing_harbor:integer -&gt; foreign key reference to the delivery harbor.</li>
+<li>landed_at:datetime -&gt; landing time.</li>
+<li>track:text -&gt; an array of maps containing the following keys: 'lat', 'lon', 'temperature', 'elevation'</li>
+<li>boat:integer -&gt; foreign key reference to some boat.</li>
+<li>gear:string -&gt; the fishing gear that was used in this trip.</li>
+</ul>
+</li>
+<li>Harbor
+
+<ul>
+<li>description:text -&gt; static metadata describing the harbor.</li>
+</ul>
+</li>
+<li>Boat 
+
+<ul>
+<li>name:string -&gt; the name of the boat.</li>
+<li>description:text -&gt; a description of the boat.</li>
+<li>captain:string -&gt; the name of the captain operating the boat.</li>
+</ul>
+</li>
+<li>Species
+
+<ul>
+<li>short_name:string -&gt; a three character abbrevation of the species.</li>
+<li>name:string -&gt; the species name.</li>
+</ul>
+</li>
+<li>QR
+
+<ul>
+<li>trip:integer -&gt; foreign key reference to a trip.</li>
+<li>species:integer -&gt; foreign key reference to a species.</li>
+</ul>
+</li>
+</ul>
+    </div>
+  </div>
+</body>
+</html>
