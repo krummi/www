@@ -2,134 +2,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Hrafn Eiríksson | Software developer and personal-analytics fanatic.</title>
+  <title>Hrafn Eiríksson | hrafn.eiriksson.is</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <style type="text/css">
-/* START OF CSS RESET */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+body {
+  font-family: "proxima-nova", "lucida grande", Helvetica, sans-serif ;
+  font-size: 16px !important;
   margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-a {
-  text-decoration: none;
-}
 
-/* END OF CSS RESET */
-
-body {
-  font-family: "Open Sans";
-  font-size: 14px;
 }
-
-#container {
-  max-width: 720px;
+.all-wrapper {
+  max-width: 800px;
   margin: 0 auto;
+  margin-top: 10px;
 }
-
-#main-header {
-  margin-top: 60px;
-  margin-bottom: 20px;
-
+#me {
+  width: 100%;
+  float: left;
 }
-
-#main-nav {
-  clear: left;
-}
-
-h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  display: inline;
-}
-
-h1 a {
-  color: #000;
-}
-
 #gravatar {
+  margin-top: 5px;
   overflow: hidden;
   float: right;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
+  float: right;
 }
-
-#me {
-  float: left;
-  margin-top: 17px;
-  margin-bottom: 15px;
-}
-
 .clearfix {
   clear: both;
 }
-
+h1 {
+  margin-bottom: 5px;
+}
+h2 { 
+  padding-top: 5px;
+  padding-bottom: 8px;
+  border-bottom: solid 1px #ccc; 
+  font-size: 21px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: green;
+}
+.clearfix {
+  clear: both;
+}
+.icon:hover {
+  text-decoration: none;
+}
+#intro {
+}
+p {
+  letter-spacing: -0.2px;
+  font-size: 15px;
+}
   </style>
 </head>
 
 <body>
-<div id="container">
-  <header id="main-header">
-    <div id="me">
-      <h1><a href="http://hrafn.eiriksson.is" title="a.k.a. krummi" rel="home">HRAFN EIRÍKSSON</a></h1> &mdash; <span>Software developer, student and personal-analytics fanatic.</span>
+<div class="all-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="me">
+        <img id="gravatar" alt="My gravatar" src="http://gravatar.com/avatar/310ce773beb4d8abf81aea1325a4c2cf?s=93" />   
+        <h1> 
+          <a href="http://hrafn.eiriksson.is" title="a.k.a. krummi" rel="home">
+            ∆ HRAFN EIRÍKSSON
+          </a>
+        </h1> 
+        <span>Software engineer at <a href="http://www.oz.com">OZ</a>. Student at <a href="http://www.ru.is">Reykjavik University</a>.</span>
+      </div>
+      <div class="clearfix"></div>
     </div>
-
-    <div id="gravatar">
-      <img alt="My gravatar" src="http://gravatar.com/avatar/310ce773beb4d8abf81aea1325a4c2cf" />   
-    </div>
-
-    <nav id="main-nav">
-      Work at <a href="http://www.oz.com/">OZ</a> | Study at <a href="http://www.ru.is">RU</a>
-    </nav>
-
-    <div class="clearfix"></div>
-  </header>
-
-  <div>
-    &nbsp;
   </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h2>
+        Writings
+        <span style="float: right;"><a href="/rss" style="color: #ccc;"><i class="fa fa-rss"></i></a></span>
+      </h2>
+
+      <a href="/" style="font-size: 17px;">The P2PLS Agent Design</a><br /><span style="color: #888; font-style: italic; font-size: 15px;">November 6th, 2013</span>
+    </div>
+    <div class="col-md-4">
+      <h2>
+        Introduction
+        
+      </h2>
+
+      <p id="intro">Hey! My name is Hrafn.</p>
+      <p>Contact me at <a href="mailto:hrafn@eiriksson.is">hrafn@eiriksson.is</a>.</p>
+      <p>Or find me at:</p>
+
+      <a href="http://www.last.fm/user/krumm" class="icon">
+        <img src="img/lastfm.png" />
+      </a>
+      <a href="http://is.linkedin.com/in/hrafneiriksson" class="icon">
+        <img src="img/linkedin.png" />
+      </a>
+      <a href="http://www.facebook.com/hrafn" class="icon">
+        <img src="img/facebook.png" />
+      </a>
+      <a href="http://www.github.com/krummi/" class="icon">
+        <img src="img/github.png" />
+      </a>
+      <a href="http://www.imdb.com/name/nm4624562/" class="icon">
+        <img src="img/imdb.png" alt="Yup, I'm on IMDB." title="Yup, I'm on IMDB." />
+      </a>
+    </div>
+  </div>
+
 </div>
 </body>
 
