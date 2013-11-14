@@ -1,0 +1,18 @@
+ <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+<script type="text/javascript">
+$(function() {
+  jQuery.ajax({
+      "async": true, //cannot be false for JSONP
+      "url": "http://sportscal.herokuapp.com/callback.json?user=krummi&callback=flipp",
+      "dataType": 'jsonp',
+      "method": "GET",
+      "error": function (jqXHR, textStatus, errorThrown) {
+          console.log(textStatus + ': ' + errorThrown);
+      },
+      "success": function (data, textStatus, jqXHR) {
+        console.log(data);
+      }
+  });
+});
+</script>

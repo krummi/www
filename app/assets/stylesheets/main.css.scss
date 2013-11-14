@@ -2,12 +2,13 @@ body {
   font-family: "proxima-nova", "lucida grande", Helvetica, sans-serif ;
   font-size: 16px !important;
   margin: 0;
-
+  border-top: solid 3px green;
+  background-color: lighten(#ededed, 3);
 }
 .container {
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 13px;
 }
 #me {
   width: 100%;
@@ -40,6 +41,9 @@ a {
   color: green;
 }
 a:visited {
+  color: green;
+}
+a:hover {
   color: green;
 }
 .clearfix {
