@@ -17,4 +17,5 @@
 //= require 'moment'
 //= require 'd3.v3'
 //= require 'cal-heatmap'
+//= require 'spin'
 //= require_tree .

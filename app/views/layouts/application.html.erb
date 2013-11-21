@@ -31,6 +31,27 @@
       <h2> Exercise (<a href="http://sportscal.herokuapp.com/u/krummi">more</a>)</h2>     
       <script type="text/javascript">
 $(function() {
+  // Configure spin.js.
+  var opts = {
+    lines: 11, // The number of lines to draw
+    length: 10, // The length of each line
+    width: 2, // The line thickness
+    radius: 11, // The radius of the inner circle
+    corners: 1, // Corner roundness (0..1)
+    rotate: 27, // The rotation offset
+    direction: 1, // 1: clockwise, -1: counterclockwise
+    color: 'green', // #rgb or #rrggbb or array of colors
+    speed: 0.9, // Rounds per second
+    trail: 50, // Afterglow percentage
+    shadow: false, // Whether to render a shadow
+    hwaccel: false, // Whether to use hardware acceleration
+    className: 'spinner', // The CSS class to assign to the spinner
+    zIndex: 2e9, // The z-index (defaults to 2000000000)
+    top: 'auto', // Top position relative to parent in px
+    left: 'auto' // Left position relative to parent in px
+  };
+  var target = document.getElementById('loading-spinner');
+  var spinner = new Spinner(opts).spin(target);  
   jQuery.ajax({
     "async": true, //cannot be false for JSONP
     "url": "http://sportscal.herokuapp.com/callback.json?user=krummi&callback=flipp",
@@ -50,7 +71,8 @@ $(function() {
             results[stuff] = 1;
           } 
       }
-      console.log(results);
+      $('#loading-spinner').hide();
+      $('#stuff').show();
       var cal = new CalHeatMap();
       cal.init({
         itemSelector: "#stuff",
@@ -74,7 +96,10 @@ $(function() {
   });
 });
       </script>
-      <div id="stuff" style="padding-top: 5px;">
+      <div id="loading-spinner" style="height: 70px; ">
+
+      </div>
+      <div id="stuff" style="padding-top: 5px; display: none;">
       </div>      
     </div>
     <div class="col-md-4">
