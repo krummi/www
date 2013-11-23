@@ -1,4 +1,6 @@
 function spin() {
+  $('#loading-spinner').show();
+  $('#exercise').hide();
   // Configure spin.js.
   var opts = {
     lines: 7, // The number of lines to draw
@@ -18,7 +20,9 @@ function spin() {
     top: 'auto', // Top position relative to parent in px
     left: 'auto' // Left position relative to parent in px
   };
+
   var target = document.getElementById('loading-spinner');
+  $('#loading-spinner').empty();
   var spinner = new Spinner(opts).spin(target);
 }
 
@@ -52,7 +56,6 @@ function fetchData(callback, noOfMonths) {
 function heatmap(months) {
   $('#loading-spinner').hide();
   $('#exercise').show();
-
   var cal = new CalHeatMap();
   cal.init({
     itemSelector: "#exercise",
