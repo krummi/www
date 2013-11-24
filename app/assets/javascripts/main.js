@@ -61,7 +61,7 @@
       $('#loading-spinner').hide();
       $('#exercise').show();
       var exerciseWidth = $('#exercise').width();
-      var howManyToShow = Math.floor(exerciseWidth / 100);
+      var howManyToShow = Math.floor(exerciseWidth / 98);
       kweb.exerciseMap = new CalHeatMap();
       kweb.exerciseMap.init({
         itemSelector: "#exercise",
@@ -88,30 +88,21 @@ $(function() {
   kweb.displaySpinner();
   kweb.loadExerciseData();
 
-  enquire.register("screen and (max-width: 767px)", {
-    match: function() {
-      if (kweb.exerciseData !== null) {
-        $('#exercise').empty();
-        kweb.heatmap();
-      }
+  function update() {
+    if (kweb.exerciseData !== null) {
+      $('#exercise').empty();
+      kweb.heatmap();
     }
-  });
-  enquire.register("screen and (min-width: 768px) and (max-width: 992px)", {
-    match: function() {
-      if (kweb.exerciseData !== null) {
-        $('#exercise').empty();
-        kweb.heatmap();
-      }
-    }
-  });
-  enquire.register("screen and (min-width: 993px)", {
-    match: function() {
-      if (kweb.exerciseData !== null) {
-        $('#exercise').empty();
-        kweb.heatmap();
-      }
-    }
-  });
+  }
 
-
+  // Worst code ever. :-)
+  enquire.register("screen and (max-width: 100px)", { match: update });
+  enquire.register("screen and (min-width: 101px) and (max-width: 200px)", { match: update });
+  enquire.register("screen and (min-width: 201px) and (max-width: 300px)", { match: update });
+  enquire.register("screen and (min-width: 301px) and (max-width: 400px)", { match: update });
+  enquire.register("screen and (min-width: 401px) and (max-width: 500px)", { match: update });
+  enquire.register("screen and (min-width: 501px) and (max-width: 600px)", { match: update });
+  enquire.register("screen and (min-width: 601px) and (max-width: 700px)", { match: update });
+  enquire.register("screen and (min-width: 768px) and (max-width: 992px)", { match: update });
+  enquire.register("screen and (min-width: 993px)", { match: update }, true);
 });
