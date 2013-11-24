@@ -60,15 +60,22 @@
     kweb.heatmap = function() {
       $('#loading-spinner').hide();
       $('#exercise').show();
+
       var exerciseWidth = $('#exercise').width();
-      var howManyToShow = Math.floor(exerciseWidth / 98);
+      var howManyToShow = Math.max(Math.floor(exerciseWidth / 98), 3);
+
+      // Determines the first day of the month, howManyToShow months ago.
+      var today = new moment();
+      var monthsAgo = new moment([today.year(), today.month(), 1])
+        .subtract('months', howManyToShow - 1);
+
       kweb.exerciseMap = new CalHeatMap();
       kweb.exerciseMap.init({
         itemSelector: "#exercise",
         domain: "month",
         subDomain: "x_day",
         data: kweb.exerciseData,
-        start: new Date(2013, 6, 1),
+        start: monthsAgo.toDate(),
         cellSize: 10,
         cellPadding: 2,
         domainGutter: 20,
@@ -96,8 +103,7 @@ $(function() {
   }
 
   // Worst code ever. :-)
-  enquire.register("screen and (max-width: 100px)", { match: update });
-  enquire.register("screen and (min-width: 101px) and (max-width: 200px)", { match: update });
+  enquire.register("screen and (max-width: 200px)", { match: update });
   enquire.register("screen and (min-width: 201px) and (max-width: 300px)", { match: update });
   enquire.register("screen and (min-width: 301px) and (max-width: 400px)", { match: update });
   enquire.register("screen and (min-width: 401px) and (max-width: 500px)", { match: update });
