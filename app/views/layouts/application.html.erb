@@ -6,7 +6,7 @@
 
   <meta property="og:title" content="Hrafn Eiríksson | hrafn.eiriksson.is" />
   <meta property="og:description" content="Hrafn Eiriksson is a software engineer living in Reykjavik, Iceland." />
-  <meta property="og:image" content="http://hrafn.eiriksson.is/assets/krummi.jpg" />
+  <meta property="og:image" content="<%= asset_path 'krummi.jpg' %>" />
   <meta property="og:url" content="http://hrafn.eiriksson.is/" />
 
   <link rel="canonical" href="http://eiriksson.is/" />
@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col-md-12">
       <div id="me">
-        <img id="gravatar" alt="Hrafn Eiriksson" src="/assets/krummi.jpg" />   
+        <img id="gravatar" alt="Hrafn Eiriksson" src="<%= asset_path 'krummi.jpg' %>" />   
         <h1> 
           <a href="http://hrafn.eiriksson.is" title="a.k.a. krummi" rel="home">
             HRAFN EIRÍKSSON
