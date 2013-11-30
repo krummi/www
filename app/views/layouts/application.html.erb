@@ -4,6 +4,14 @@
   <meta name="viewport" content="width=device-width" />
   <title>Hrafn Eiríksson | hrafn.eiriksson.is</title>
 
+  <meta property="og:title" content="Hrafn Eiríksson | hrafn.eiriksson.is" />
+  <meta property="og:description" content="Hrafn Eiriksson is a software engineer living in Reykjavik, Iceland." />
+  <meta property="og:image" content="http://hrafn.eiriksson.is/assets/krummi.jpg" />
+  <meta property="og:url" content="http://hrafn.eiriksson.is/" />
+
+  <link rel="canonical" href="http://eiriksson.is/" />
+  <meta name="description" content="Hrafn Eiriksson is a software engineer living in Reykjavik, Iceland.">
+  
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -15,7 +23,7 @@
   <div class="row">
     <div class="col-md-12">
       <div id="me">
-        <img id="gravatar" alt="My gravatar" src="http://gravatar.com/avatar/310ce773beb4d8abf81aea1325a4c2cf?s=93" />   
+        <img id="gravatar" alt="Hrafn Eiriksson" src="/assets/krummi.jpg" />   
         <h1> 
           <a href="http://hrafn.eiriksson.is" title="a.k.a. krummi" rel="home">
             HRAFN EIRÍKSSON
@@ -26,49 +34,8 @@
       <div class="clearfix"></div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8">
-      <h2> Exercise (<a href="http://sportscal.herokuapp.com/u/krummi">more</a>)</h2>     
-      <div id="loading-spinner"></div>
-      <div id="exercise"></div>
-    </div>
-    <div class="col-md-4">
-      <h2>Introduction</h2>
 
-      <p id="intro">Hey! My name is Hrafn.</p>
-      <p>Contact me at <a href="mailto:hrafn@eiriksson.is">hrafn@eiriksson.is</a>.</p>
-
-      <a href="http://www.facebook.com/hrafn" class="icon">
-        <img src="img/facebook.png" />
-      </a>
-      <a href="http://is.linkedin.com/in/hrafneiriksson" class="icon">
-        <img src="img/linkedin.png" />
-      </a>      
-      <a href="http://www.last.fm/user/krumm" class="icon">
-        <img src="img/lastfm.png" />
-      </a>
-      <a href="http://www.github.com/krummi/" class="icon">
-        <img src="img/github.png" />
-      </a>
-      <a href="http://www.imdb.com/name/nm4624562/" class="icon">
-        <img src="img/imdb.png" alt="Yup, I'm on IMDB." title="Yup, I'm on IMDB." />
-      </a>
-    </div>
-  </div>
-  <!--
-  <div class="row">
-    <div class="col-md-8">
-      <h2>
-        Writings
-        <span style="float: right;"><a href="/rss" style="color: #ccc;"><i class="fa fa-rss"></i></a></span>
-      </h2>
-
-      <a href="/" style="font-size: 17px;">The P2PLS Agent Design</a>
-      <br />
-      <span style="color: #888; font-style: italic; font-size: 15px;">November 6th, 2013</span>
-    </div>
-  </div>
-  -->
+  <%= yield %>
 </div>
 
 <!-- GA tracking -->
@@ -80,7 +47,6 @@
 
   ga('create', 'UA-45997429-1', 'eiriksson.is');
   ga('send', 'pageview');
-
 </script>
 </body>
 
