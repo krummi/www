@@ -20,4 +20,4 @@
 //= require 'spin'
 //= require 'enquire'
 //= require 'editor'
-//= require_tree .
+//= require 'main'

@@ -15,6 +15,8 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @blog.save
+    redirect_to edit_blog_path(@blog.id)
   end
 
   # GET /blogs/1/edit

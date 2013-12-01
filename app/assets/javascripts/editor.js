@@ -574,7 +574,7 @@
     };
 
     // Write an iframe and then select it for the editor
-    self.element.innerHTML = '<iframe scrolling="no" frameborder="0" id= "' + self._instanceId + '"></iframe>';
+    self.element.innerHTML = '<iframe scrolling="no" frameborder="0" id= "' + self._instanceId + '" style="border-radius: 6px;"></iframe>';
 
     // Because browsers add things like invisible padding and margins and stuff
     // to iframes, we need to set manually set the height so that the height
@@ -1508,6 +1508,7 @@
       // After the content is actually changed, emit update so it emits the updated content
       if (isUpdate) {
         self.emit('update');
+
         // Emit a private update event so it can't get accidentally removed
         self.emit('__update');
       }

@@ -4,8 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body md</th>
-      <th>Body html</th>
       <th>Published at</th>
       <th>Views</th>
       <th></th>
@@ -18,8 +16,6 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
-        <td><%= blog.body_md %></td>
-        <td><%= blog.body_html %></td>
         <td><%= blog.published_at %></td>
         <td><%= blog.views %></td>
         <td><%= link_to 'Show', blog %></td>
