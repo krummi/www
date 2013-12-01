@@ -19,4 +19,5 @@
 //= require 'cal-heatmap'
 //= require 'spin'
 //= require 'enquire'
+//= require 'editor'
 //= require_tree .
