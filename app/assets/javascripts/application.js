@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree 'shared'
+//= require_tree './shared'
 //= require 'main/moment'
 //= require 'main/d3.v3'
 //= require 'main/cal-heatmap'

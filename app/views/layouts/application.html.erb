@@ -16,6 +16,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <% if /^\/blogs.*/.match(request.fullpath) %>
     <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <% end %>
   <%= csrf_meta_tags %>
 </head>

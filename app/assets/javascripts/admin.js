@@ -1,7 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree 'shared'
+//= require_tree './shared'
 //= require 'admin/jquery-ui'
-//= require 'admin/editor.js'
-//= require 'admin/blogs.js'
+//= require 'admin/editor'
+//= require 'admin/blogs'
+//= require 'admin/typeahead'
+//= require 'admin/bootstrap-tagsinput'

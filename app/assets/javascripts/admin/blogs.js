@@ -67,10 +67,14 @@
         data: $('#blog-form').serialize()
       }).success(function() {
         $('#save-state').hide();
-        callback();
+        if (callback) {
+          callback();
+        }
       }).error(function() {
         // TODO: Do something here!!!!!!!!!!!
-        callback();
+        if (callback) {
+          callback();
+        }
       });
     }
   };
