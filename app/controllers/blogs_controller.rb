@@ -42,9 +42,10 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    puts blog_params
+    # Tagging.
     respond_to do |format|
       if @blog.update(blog_params)
+        @blog.tag_list = params['tags']
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,6 +73,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body_md, :body_html, :published_at, :views)
+      params.require(:blog).permit(:title, :body_md, :body_html, :published_at, :tags)
     end
 end

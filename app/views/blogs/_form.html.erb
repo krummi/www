@@ -9,13 +9,13 @@
   </div>
   <div style="margin-top: 13px;">
     <div style="font-weight: bold; margin-bottom: 5px;">Tags</div>
-    <input type="text" name="tags" id="tags" />
+    <input type="text" name="tags" id="tags" value="<%= @blog.tag_list %>" />
   </div>
   <% if @blog.is_published %>
-  <div style="margin-top: 13px;">
-    <%= f.label :published_at %><br>
-    <%= f.datetime_select :published_at %>
-  </div>
+    <div style="margin-top: 13px;">
+      <%= f.label :published_at %><br>
+      <%= f.datetime_select :published_at %>
+    </div>
   <% end %>
   <div style="margin: 13px 0; border-top: solid 1px #ccc; padding-top: 13px;">
     <div style="float: left;">
@@ -26,6 +26,7 @@
       <span id="save-state" style="margin-right: 5px; font-size: 0.9em; display: none;">Saving...</span>
       <%= link_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure you want to discard this blog?' }, class: 'btn btn-danger' %>
     </div>
+    <div class="clearfix"></div>
   </div>
 <% end %>
 
