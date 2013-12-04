@@ -6,7 +6,7 @@ class Blog < ActiveRecord::Base
   def self.tagged_with(name)
   	tag = Tag.where(name: name).first
     if tag != nil
-      return tag.blogs.where(is_published: true).order("published_at DESC")
+      return tag.blogs
     end
     return []
   end

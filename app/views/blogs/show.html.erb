@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <h2 style="font-size: 27px;"><%= @blog.title %></h2>
 
-<p>
-  <strong>Body md:</strong>
-  <%= @blog.body_md %>
-</p>
+<!-- TODO:
 
-<p>
-  <strong>Body html:</strong>
-  <%= @blog.body_html %>
-</p>
+      <p>
+      <strong>Published at:</strong>
+      <%= @blog.published_at %>
+    </p>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @blog.published_at %>
-</p>
+    <p>
+      <strong>Views:</strong>
+      <%= @blog.views %>
+    </p>
+  -->
 
-<p>
-  <strong>Views:</strong>
-  <%= @blog.views %>
-</p>
+    <div style="line-height: 33px; font-size: 16px;">
+      <%= @blog.body_html.html_safe %>
+    </div>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+    <div style="margin-bottom: 10px;">
+      <%= link_to 'Edit', edit_blog_path(@blog) %> |
+      <%= link_to 'Back', blogs_path %>
+    </div>
+  </div>
+</div>

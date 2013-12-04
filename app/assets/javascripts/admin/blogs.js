@@ -73,7 +73,15 @@
   kweb.save = function(callback) {
     if (kweb.currentBlogUrl !== null) {
       window.clearTimeout(kweb.updateTimer);
+
+      // Markdown -> HTML.
+      var contents = kweb.editor.exportFile(null, 'html', true);
+      $('#html-contents').val(contents);
+
+      // Shows the "Saving..." state.
       $('#save-state').show();
+
+      // Makes the request.
       $.ajax({
         type: 'PATCH',
         dataType: 'json',

@@ -6,7 +6,7 @@
     </h2>
     <% @blogs.each do |blog| %>
       <div class="blog">
-        <h3><a href="/"><%= blog.title %></a></h3>
+        <h3><a href="<%= blog_path(blog) %>"><%= blog.title %></a></h3>
         <span class="timestamp"><%= blog.published_at.strftime('%B %-d, %Y') %></span>
         <!-- TODO: November 6th, 2013 -->
       </div>
