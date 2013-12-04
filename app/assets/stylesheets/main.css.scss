@@ -1,5 +1,5 @@
 body {
-  font-family: "proxima-nova", "lucida grande", Helvetica, sans-serif ;
+  font-family: "proxima-nova", "lucida grande", Helvetica, sans-serif;
   font-size: 16px !important;
   margin: 0;
   border-top: solid 3px green;
@@ -36,6 +36,11 @@ h2 {
   font-size: 21px;
   font-weight: bold;
 }
+h3 {
+  font-family: "proxima-nova", "lucida grande", Helvetica, sans-serif !important;
+  font-size: 17px;
+  margin: 0 0 3px 0;
+}
 a {
   text-decoration: none;
   color: green;
@@ -52,8 +57,6 @@ a:hover {
 .icon:hover {
   text-decoration: none;
 }
-#intro {
-}
 p {
   letter-spacing: -0.2px;
   font-size: 15px;
@@ -64,6 +67,15 @@ p {
 #exercise {
   padding-top: 5px; 
   display: none;
+}
+.blog {
+  margin-bottom: 16px;
+  
+  .timestamp {
+    color: #888; 
+    font-style: italic;
+    font-size: 15px;
+  }
 }
 
 /* tagsinput + typeahead. */

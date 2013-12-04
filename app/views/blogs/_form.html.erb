@@ -55,10 +55,12 @@ $(function() {
   kweb.setupAutomaticSaving();
 
   $('#toggle-publish').click(function(e) {
-    kweb.togglePublish(function() {
-      // TODO: lol @ this.
-      window.location.reload();
-    });
+    kweb.save(function() {
+      kweb.togglePublish(function() {
+        // TODO: lol @ this.
+        window.location.reload();
+      });
+    })
   });
   $('#save-and-close').click(function(e) {
     kweb.save(function() {

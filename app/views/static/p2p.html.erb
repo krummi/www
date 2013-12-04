@@ -4,10 +4,13 @@
       Writings
       <span style="float: right;"><a href="/rss" style="color: #ccc;"><i class="fa fa-rss"></i></a></span>
     </h2>
-
-    <a href="/" style="font-size: 17px;">The P2PLS Agent Design</a>
-    <br />
-    <span style="color: #888; font-style: italic; font-size: 15px;">November 6th, 2013</span>
+    <% @blogs.each do |blog| %>
+      <div class="blog">
+        <h3><a href="/"><%= blog.title %></a></h3>
+        <span class="timestamp"><%= blog.published_at.strftime('%B %-d, %Y') %></span>
+        <!-- TODO: November 6th, 2013 -->
+      </div>
+    <% end %>
   </div>
   <div class="col-md-4">
     <h2>Roadmap</h2>

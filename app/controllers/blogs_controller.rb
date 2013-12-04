@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
   def publish
     @blog = Blog.find(params[:blog_id])
     respond_to do |format|
-      if @blog.update(is_published: !@blog.is_published)
+      if @blog.update(is_published: !@blog.is_published, published_at: DateTime.now)
         format.json { head :no_content }
       else
         format.json { render json: @blog.errors, status: :unprocessable_entity }
@@ -85,6 +85,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body_md, :body_html, :published_at, :tags)
+      params.require(:blog).permit(:title, :body_md, :body_html, :published_at, :tags, :is_published)
     end
 end

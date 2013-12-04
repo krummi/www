@@ -4,7 +4,11 @@ class Blog < ActiveRecord::Base
   has_many :tags, through: :taggings
 
   def self.tagged_with(name)
-  	Tag.find(name: name).blogs
+  	tag = Tag.where(name: name).first
+    if tag != nil
+      return tag.blogs.where(is_published: true).order("published_at DESC")
+    end
+    return []
   end
 
   def tag_list
