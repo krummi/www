@@ -56,6 +56,20 @@
     });
   };
 
+  kweb.togglePublish = function (callback) {
+    $.ajax({
+      type: 'PATCH',
+      dataType: 'json',
+      url: kweb.currentBlogPublishUrl
+    }).success(function() {
+      if (callback) {
+        callback();
+      }
+    }).error(function() {
+      // TODO: Do something here! ...well or not.
+    });
+  };
+
   kweb.save = function(callback) {
     if (kweb.currentBlogUrl !== null) {
       window.clearTimeout(kweb.updateTimer);

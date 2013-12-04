@@ -1,13 +1,11 @@
 <h2>Listing blogs</h2>
 
-<table>
+<table width="100%">
   <thead>
     <tr>
       <th>Title</th>
       <th>Published at</th>
-      <th>Views</th>
-      <th></th>
-      <th></th>
+      <th># of views</th>
       <th></th>
     </tr>
   </thead>
@@ -18,9 +16,11 @@
         <td><%= blog.title %></td>
         <td><%= blog.published_at %></td>
         <td><%= blog.views %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', blog %>
+          <%= link_to 'Edit', edit_blog_path(blog) %>
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

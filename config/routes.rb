@@ -1,5 +1,7 @@
 Eiriksson::Application.routes.draw do
-  resources :blogs
+  resources :blogs do |d|
+  	patch '/publish' => 'blogs#publish'
+  end
 
   root 'static#index'
 

@@ -23,6 +23,18 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  # PATCH /blogs/1/publish 
+  def publish
+    @blog = Blog.find(params[:blog_id])
+    respond_to do |format|
+      if @blog.update(is_published: !@blog.is_published)
+        format.json { head :no_content }
+      else
+        format.json { render json: @blog.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # POST /blogs
   # POST /blogs.json
   def create
