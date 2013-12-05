@@ -3,6 +3,21 @@ class Blog < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  # Slugs
+  extend FriendlyId
+  friendly_id :title, :use => :history
+
+  # Initialization
+  def init
+    self.views ||= 0
+    self.is_published ||= false
+  end
+
+  def should_generate_new_friendly_id?
+    puts "CALLING SHOULD GENERATE NEW FRIENDLY ID... RETURNING: #{title_changed?}"
+    title_changed?
+  end
+
   def self.tagged_with(name)
   	tag = Tag.where(name: name).first
     if tag != nil
