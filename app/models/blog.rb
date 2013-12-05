@@ -7,6 +7,9 @@ class Blog < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :history
 
+  # Events
+  after_initialize :init
+
   # Initialization
   def init
     self.views ||= 0

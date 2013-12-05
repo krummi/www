@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
 
   # PATCH /blogs/1/publish 
   def publish
-    @blog = Blog.find(params[:blog_id])
+    @blog = Blog.friendly.find(params[:blog_id])
     respond_to do |format|
       if @blog.update(is_published: !@blog.is_published, published_at: DateTime.now)
         format.json { head :no_content }
