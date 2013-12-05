@@ -14,7 +14,6 @@ class Blog < ActiveRecord::Base
   end
 
   def should_generate_new_friendly_id?
-    puts "CALLING SHOULD GENERATE NEW FRIENDLY ID... RETURNING: #{title_changed?}"
     title_changed?
   end
 
