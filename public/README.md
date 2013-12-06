@@ -12,3 +12,5 @@ My personal webpage.
   * ☐ "December 4, 2013" -> "December 4th, 2013". 
   * ☐ Images on the blog.
   * ☐ RSS.
+  * ☐ A list of slugs associated with blogs.
+  * ☐ show.html.erb for blogs.

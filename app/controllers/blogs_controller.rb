@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+  http_basic_authenticate_with name: ENV['ADMIN_USER'], 
+                               password: ENV['ADMIN_PASS'], 
+                               except: :show
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
@@ -7,10 +10,14 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
+  # GET /blogs/title
+  # GET /blogs/title.json
+  # GET /title
+  # GET /title.json
   def show
-    if request.path != blog_path(@blog)
+    if !@blog 
+      raise ActionController::RoutingError.new('Not Found')
+    elsif request.path != short_blog_path(@blog)
       return redirect_to @blog, :status => :moved_permanently
     else
       @blog.increment!(:views)
@@ -85,7 +92,11 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.friendly.find(params[:id])
+      begin
+        @blog = Blog.friendly.find(params[:id])
+      rescue
+        @blog = nil
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
