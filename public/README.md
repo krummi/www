@@ -14,3 +14,5 @@ My personal webpage.
   * ☐ RSS.
   * ☐ A list of slugs associated with blogs.
   * ☐ show.html.erb for blogs.
+  * ☐ Tagsinput - Make it suggest actual tags.
+  * ☐ Tagsinput - Fix the input bug.
