@@ -1,13 +1,15 @@
 class BlogsController < ApplicationController
+  
   http_basic_authenticate_with name: ENV['ADMIN_USER'], 
                                password: ENV['ADMIN_PASS'], 
                                except: :show
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(['is_published', 'published_at'])
   end
 
   # GET /blogs/title

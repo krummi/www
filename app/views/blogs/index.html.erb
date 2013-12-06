@@ -13,7 +13,7 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= short_blog_path(blog.title) %></td>
+        <td><%= link_to blog.title, short_blog_path(blog) %></td>
         <td><%= blog.published_at %></td>
         <td><%= blog.views %></td>
         <td>
