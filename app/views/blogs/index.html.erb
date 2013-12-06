@@ -13,11 +13,10 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= blog.title %></td>
+        <td><%= short_blog_path(blog.title) %></td>
         <td><%= blog.published_at %></td>
         <td><%= blog.views %></td>
         <td>
-          <%= link_to 'Show', short_blog_path(blog) %>
           <%= link_to 'Edit', edit_blog_path(blog) %>
           <%= link_to 'Discard', blog, method: :delete, data: { confirm: 'Are you sure you want to discard this blog?' } %>
         </td>
