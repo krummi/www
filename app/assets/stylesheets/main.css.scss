@@ -41,15 +41,16 @@ h3 {
   font-size: 17px;
   margin: 0 0 3px 0;
 }
-a {
+a:not(.btn) {
   text-decoration: none;
   color: green;
 }
-a:visited {
+a:not(.btn):visited {
   color: green;
 }
-a:hover {
+a:not(.btn):hover {
   color: green;
+  text-decoration: underline;
 }
 .clearfix {
   clear: both;
@@ -68,13 +69,43 @@ a:hover {
   padding-top: 5px; 
   display: none;
 }
-.blog {
+
+.blog-row {
   margin-bottom: 16px;
   
   .timestamp {
     color: #888; 
     font-style: italic;
     font-size: 15px;
+  }
+}
+
+#blog-show {
+  .blog-header {
+    h2 {
+      font-size: 28px;
+    }
+  }
+  .blog-body {
+    line-height: 33px;
+    font-size: 16px;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 30px 0 10px 0;
+    }
+    h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 25px 0 10px 0;
+    }
+  }
+  .blog-footer {
+    margin-bottom: 10px;
   }
 }
 

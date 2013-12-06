@@ -19,7 +19,7 @@
         <td>
           <%= link_to 'Show', blog %>
           <%= link_to 'Edit', edit_blog_path(blog) %>
-          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Discard', blog, method: :delete, data: { confirm: 'Are you sure you want to discard this blog?' } %>
         </td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'New Blog', new_blog_path, class: 'btn btn-primary' %>
