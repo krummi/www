@@ -2,18 +2,23 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='/css/main.less')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/css/main.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     script(src='/js/jquery-2.1.1.min.js')
     script(src='/js/bootstrap.min.js')
   body
     .container
       .row
-        .span9
-          nav#navigation.
-            Menu
-        .span3
-          Hahah
-      .row
-        block content
+        .col-md-9
+          nav#navigation
+            ul
+              li
+                a(href='/') BLOG
+              li
+                a(href='/about') ABOUT ME
+              li
+                a(href='/training') TRAINING
+        .col-md-3.
+          Testing dog...
