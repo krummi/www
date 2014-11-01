@@ -1,5 +1,132 @@
-<ul>
-  <li><a href="/arduino/cheatsheet.pdf">Cheatsheet!</a></li>
-  <li>Resources</li>
-</ul>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Arduino | hrafn.eiriksson.is</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    p {
+      font-family: Merriweather, Georgia, serif;
+      font-size: 16px;
+      line-height: 30px;
+    }
+    h3:not(:first-child) {
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+    h4 {
+      margin-top: 25px;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Arduino leiðbeiningar</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-9" style="margin-bottom: 100px;">
+
+          <h3 id="where">Hvar get ég fengið Arduino?</h3>
+
+          <h4>Á Íslandi?</h4>
+          <p>Einu verslunirnar hér á Íslandi sem ég veit til að eiga stundum til einhverjar Arduino vörur á lager eru <a href="http://www.ihlutir.is/">Íhlutir</A> og <a href="http://www.mbr.is">Miðbæjarradíó</a>. Þar er til dæmis hægt að fá Arduino byrjandapakka (e. Arduino Starter Kit), en miðað við að verðin sem verslanirnar gefa upp á vefsíðunum sínum myndi ég ekki kaupa þennan pakka frá þeim (23 - 30 þúsund krónur). En það þýðir samt ekki að það sé ekki að fá allskonar skemmtilegar vörur í þessum verslunum; þær selja m.a. allskonar íhluti svosem LEDs, sensora og fleira sem ekki kostar mikið. Einnig er hægt að fá mjög ódýran Raspberry Pi + WiFi kort í Miðbæjarradíó fyrir þá sem eru lengra komnir. ;-)</p>
+
+          <p>Fyrir utan landssteinana eru dreifingaraðilar sem hægt er að versla af, en eins og alltaf er þetta spurning um að ná einhverju góðu jafnvægi á milli verðs og gæða.</p>
+
+          <h4>SparkFun Electronics</h4>
+
+          <p><a href="http://www.sparkfun.com">SparkFun</a> er bandarískt fyrirtæki sem sérhæfir sig í allskonar rafmagnsvörum fyrir DIY áhugafólk. Úrvalið hjá þeim er fáránlega gott — það er bókstalega hægt að fá allt á milli himins og jarðar þarna. Einnig er þjónustan mjög góð og með hverri og einni vöru fylgja alltaf góðar leiðbeiningar (oft í formi video-a) um það hvernig á að fá allt til að virka. En eins og alltaf þá getur ekki verið allt gott við þá; verðin þeirra eiga til að vera svolítið há. Þrátt fyrir það kaupi ég persónulega allt þarna vegna þess að ég veit að ég er að fá gæðavörur. Skoðið til dæmis úrvalið af sensorum hjá þeim!</p>
+
+          <h4>SeeedStudio</h4>
+
+          <p>Asíska netverslunin <a href="http://www.seeedstudio.com/depot/">SeeedStudio</a> er oft nefnd sem góður valkostur þegar kemur að Arduino innkaupum enda gott úrval og stundum hægt að fá lægra verð þar en hjá SparkFun.
+
+          <h4>DigiKey</h4>
+
+          <p><a href="http://www.digikey.com">DigiKey</a> selur allt á milli himins og jarðar þegar að kemur að rafmagnsvörum og þar á meðal Arduino. Mér sýnist verðin á plain-Arduino borðum hjá þeim ekkert vera spes, en ég veit til þess að minni íhlutir eru mjög ódýrir hjá þeim. Vandamálið við þá er að maður þarf að vera nokkuð viss um hvað nákvæmlega maður er að kaupa áður en maður verslar af þeim, til þess að vera viss um að það sé allt "compatible".
+
+          <h4>AliExpress</h4>
+
+          <p>Eins og með vel-flest, er hægt að fá mikið af Arduino-tengdum vörum á <a href="http://www.aliexpress.com">AliExpress</a>. Ég hef aldrei verslað slíkt þar en hef heyrt góða hluti um það enda verðin góð. Til dæmis sýnist mér AliExpress búðin <a href="http://www.aliexpress.com/store/911948">SunFounder</a> vera að fá nokkuð góða dóma og vera með góð verð á þessum vörum. Um að gera að skoða þennan möguleika!</p>
+
+          <h3 id="what">Hvað á ég að kaupa?</h3>
+
+          <p>Það fer að sjálfsögðu eftir því hvað þú vilt gera! Það sem er þó sameiginlegt með flestum er að þeir vilja eiga Arduino borð OG helst einhversskonar byrjendapakka sem inniheldur slatta af LEDs, sensorum, resistorum, etc. Gott dæmi um þetta er <a href="https://www.sparkfun.com/products/12060">SparkFun Inventor Kit</a>. Vandamálið við þetta kit (að mínu mati) er að það er engin leið til að tengja Arduino borðið við internetið, þ.e.a.s. það er hvorki með Ethernet né WiFi stuðningi. Ef að þið hafið ekki áhuga á því, þá er þetta frábær byrjendapakki.</p>
+
+          <p>Ef að þið hafið hinsvegar áhuga á að tengja kittið við internetið, þá vandast málin aðeins vegna þess að það eru engin kit sem innihalda Arduino borð með internet-stuðningi. Ein leiðin til þess að bæta því við er að kaupa til dæmis inventor kit, en bæta við WiFi eða ethernet shield. Það er til slatti af þeim t.d. <a href="https://www.sparkfun.com/categories/240">hér</a>. Önnur leið að þessu er að kaupa WiFi/Ethernet Arduino borð eins og <a href="https://www.sparkfun.com/products/12053">Yun</a> og kaupa aukalega við það <a href="https://www.sparkfun.com/products/12862">sensor kit</a>.</p>
+
+          <p>Að þessum grunnpakka undanskildum er þetta <em>bara</em> spurning um að kaupa það sem ykkur vantar fyrir "projectið" ykkar. Ef þið hafið ekkert project í huga legg ég til að þið skoðið vörulistann hjá t.d. <a href="http://www.sparkfun.com">SparkFun</a> og ég þori næstum að veðja að ykkur dettur eitthvað sniðugt í hug til að gera. Önnur leið til að fá hugmyndir er auðvitað bara að skoða síðu eins og <a href="http://www.instructables.com/id/Arduino-Projects/">Instructables</a>, þar sem þið getið ekki bara fengið hugmyndir heldur líka leiðbeiningar um það hvernig þið eigið að gera hitt og þetta.
+
+          <h3 id="links">Nytsamlegir hlekkir</h3>
+          <p>
+            <ul>
+              <li><a href="http://arduino.cc/en/Reference/HomePage">Mjög gott cheatsheet á ensku</a></li>
+              <li><a href="http://hrafn.eiriksson.is/arduino/cheatsheet.pdf">Arduino cheatsheet á íslensku</a></li>
+              <li><a href="http://www.instructables.com/id/How-to-read-color-codes-from-resistors-1/">How to read color codes from resistors</a></li>
+              <li><a href="https://www.sparkfun.com/arduino_guide">Arduino Buying Guide</a></li>
+              <li><a href="http://arduino.cc/en/pmwiki.php?n=Guide/HomePage">Arduino Getting Started Guide</a></li>
+              <li><a href="http://playground.arduino.cc/">Allskonar Arduino-tengdar upplýsingar</a></li>
+            </ul>
+          </p>
+
+          <h3 id="contact">Hafa samband</h3>
+          <p>Athugasemdir? Ábendingar? Endilega <a href="mailto:hrafn@eiriksson.is">hendið póst á mig á mig</a>!</p>
+        </div>
+        <div class="col-md-3">
+          <div class="list-group" style="position: fixed; width: 260px;">
+            <a href="#" class="list-group-item disabled" style="background-color: #ededed; color: #000;">
+              Efnisyfirlit
+            </a>
+            <a href="#where" class="list-group-item">Hvar get ég fengið Arduino?</a>
+            <a href="#what" class="list-group-item">Hvað á ég að kaupa?</a>
+            <a href="#links" class="list-group-item">Nytsamlegir hlekkir</a>
+            <a href="#contact" class="list-group-item">Hafa samband</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+Laugardagurinn:
+
+  - 09 – 10 | Kynning og uppsetning á græjum. 
+  - 10 – 11 | Renna yfir examples #1, #3 og #5 bókinni.
+  - 11 – 12 | Challenge(s) byggð á þessum examples í bókinni.
+            • #1: Kveikja/slökkva á ljósi forritunar sketch.
+            • #2: Ýta á takka einu sinni: Rautt ljós, 2x grænt, 3x gult, loop. 
+  - 12 – 13 | Matur/whatever
+  - 13 – 14 | Meiri, meiri forritun.
+            • Maybe an example from me regarding for loops on many LEDs.
+  - 14 – 16 | Exploring other parts: Til dæmis #6 (photo res), 
+                                     #7 (temp), #8, #11 (buzzer!), 
+                                     hreyfiskynjarar. #15 (LCDs)
+
+
+    13:00 Challenge
+    ===============
+
+    Búa til rafrás sem að sameinar verkefni #3 og #5 þannig að þið eruð með
+    tvö components: LED-ið sem gefur frá sér fleira en eitt ljós og einn takka.
+    Þegar að það er ýtt einu sinni á takkann, þá gefur ljósið frá sér rautt 
+    ljós, þegar að það er ýtt í annað skiptið verður ljósið blátt og í þriðja
+    skiptið verður það fjólublátt. Eða eitthvað.
