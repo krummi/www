@@ -1,29 +1,32 @@
 doctype html
 html
   head
-    title= title
+    title Hrafn Eiríksson
+    link(rel='stylesheet',id='designer-fonts-css',href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%7CArimo%3A400%2C700%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext',type='text/css',media='all')
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/css/main.css')
-    link(rel='stylesheet',id='designer-fonts-css',href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%7CArimo%3A400%2C700%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext',type='text/css',media='all')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     script(src='/js/jquery-2.1.1.min.js')
     script(src='/js/bootstrap.min.js')
   body
     #sidebar
       #sidebar-inner
-        h1
-          #intro
-            img(src='http://www.gravatar.com/avatar/310ce773beb4d8abf81aea1325a4c2cf.png')
-            h1 Hrafn Eiríksson
+
+        #intro
+          img(src='http://www.gravatar.com/avatar/310ce773beb4d8abf81aea1325a4c2cf.png')
+          h1 Hrafn Eiríksson
 
         nav#navigation
           ul
             li.active
-              a(href='/') BLOG
+              a(href='/') Bloggið
             li
-              a(href='/about') ABOUT ME
+              a(href='/training') Ironman
             li
-              a(href='/training') TRAINING
+              a(href='/training') Hafa samband
+
+        #footer
+          &copy; <a href="mailto:hrafn (at) eiriksson.is">Hrafn Eiríksson</a>, 2014&dash;2015
     #content
       h2 What is this?

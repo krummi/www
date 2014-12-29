@@ -4,7 +4,7 @@
 @sidebar-lighter-color: rgb(85, 98, 109);
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Lato, Arimo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.8;
   font-size: 17px;
@@ -29,7 +29,7 @@ body {
   padding-right: 10px;
 
   #sidebar-inner {
-    width: 300px;
+    width: 250px;
     float: right;
 
     #intro {
@@ -39,12 +39,19 @@ body {
         border-radius: 50%;
       }
       h1 {
-        font-family: Lato, Arimo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 0.5em;
+        font-size: 1em;
         color: @bg-color;
       }
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 0.8em;
+      color: @bg-color;
     }
 
     #navigation {
