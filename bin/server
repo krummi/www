@@ -2,7 +2,6 @@
 
 var app = require('../lib/app');
 var log = require('../lib/helpers/logger')
-
 var models = require('../lib/models');
 
 app.set('port', process.env.PORT || 3000);
@@ -12,5 +11,3 @@ models.sequelize.sync({ force: true }).then(function () {
     log.info('express server listening on port ' + server.address().port);
   });
 });
-
-module.exports = server;

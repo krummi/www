@@ -1,9 +1,5 @@
 var gulp = require('gulp');
-
-// Nodemon
 var nodemon = require('gulp-nodemon');
-
-// LESS
 var less = require('gulp-less');
 
 gulp.task('less', function () {
@@ -22,6 +18,5 @@ gulp.task('nodemon', function () {
   })
   .on('change', ['less']);
 });
-
 
 gulp.task('default', ['nodemon', 'less']);
