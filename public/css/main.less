@@ -1,18 +1,97 @@
+// @bg-color: rgb(56, 63, 73);
+@bg-color: rgb(244, 244, 244);
+@sidebar-color: rgb(56, 63, 73);
+@sidebar-lighter-color: rgb(85, 98, 109);
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.8;
   font-size: 17px;
+  background-color: @bg-color;
 }
 
-#navigation {
-  background-color: green;
-  ul {
-    list-style-type: none;
+#content {
+  position: absolute;
+  left: 40%;
+  padding-left: 30px;
+  padding-top: 50px;
+}
 
-    li {
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  right: 60%;
+  background-color: @sidebar-color;
+  padding-right: 10px;
 
+  #sidebar-inner {
+    width: 300px;
+    float: right;
+
+    #intro {
+      margin-top: 70px;
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+      h1 {
+        font-family: Lato, Arimo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.5em;
+        color: @bg-color;
+      }
     }
 
+    #navigation {
+      margin-top: 50px;
+      margin-bottom: 10px;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+
+        li {
+          border-top-style: dotted;
+          border-top-width: 1px;
+          border-top-color: @sidebar-lighter-color;
+
+          a {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            color: @bg-color;
+            padding: 7px 10px;
+            width: 100%;
+          }
+
+          &:last-child {
+            border-bottom-style: dotted;
+            border-bottom-width: 1px;
+            border-bottom-color: @sidebar-lighter-color;
+          }
+        }
+        li.active {
+          a {
+            color: #fff !important;
+          }
+        }
+        li:hover {
+          background-color: @sidebar-lighter-color;
+          a {
+            color: @bg-color !important;
+            text-decoration: none;
+          }
+        }
+
+      }
+    }
   }
 }
