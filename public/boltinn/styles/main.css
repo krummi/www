@@ -1,0 +1,49 @@
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+}
+#container {
+    width: 100%;
+}
+#main {
+    margin: 0 auto; 
+}
+#league {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#league th {
+    background: #8B95A4;
+    color: #fff;
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+}
+#league tr, th {
+    font-size: 13px;
+    font-weight: bold;
+    height: 30px;
+    vertical-align: middle;
+    width: 42px;
+}
+#league tr {
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#league .first {
+    color: #fff;
+    background-color: #8CBDE0;
+}
+
+#league .last {
+    background-color: #E0E6E9;
+}
+
+#league .second {
+    background-color: #C8DCEB;
+}
+
+.col-name {
+    width: 250px;
+}

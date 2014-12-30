@@ -1,12 +1,23 @@
 doctype html
 html
   head
-    title Hrafn Eiríksson
+    meta(charset='utf-8')
+
+    title Hrafn Eiríksson | hrafn.eiriksson.is
+
+    meta(property='og:title', content='Hrafn Eiríksson | hrafn.eiriksson.is')
+    meta(property='og:description', content='Hrafn Eiriksson is a software engineer based in Reykjavik, Iceland')
+    meta(property='og:url', content='http://hrafn.eiriksson.is/')
+    meta(name='description', content='Hrafn Eiriksson is a software engineer based in Reykjavik, Iceland.')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(rel='canonical', href='http://eiriksson.is/')
+
     link(rel='stylesheet',id='designer-fonts-css',href='//fonts.googleapis.com/css?family=Lato%3A400%2C700%7CArimo%3A400%2C700%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext',type='text/css',media='all')
     link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/css/main.css')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
     script(src='/js/jquery-2.1.1.min.js')
     script(src='/js/bootstrap.min.js')
   body
@@ -27,3 +38,11 @@ html
           &copy; <a href="mailto:hrafn (at) eiriksson.is">Hrafn Eiríksson</a>, 2014&dash;2015
     #content
       h2 What is this?
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-45997429-1', 'eiriksson.is');
+      ga('send', 'pageview');

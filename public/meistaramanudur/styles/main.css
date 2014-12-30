@@ -1,0 +1,66 @@
+body {
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 12px;
+    /*background-color: #fafac6;*/
+}
+
+#container {    
+    width: 1020px;
+    margin: 0 auto;
+}
+
+#blocks {
+}
+
+.container-block {
+    width: 340px;
+    float: left;
+}
+
+.block {
+    padding: 0px 15px ;
+}
+
+.right-border {
+    border: 1px solid rgb(230,230,230);
+    border-width: 0 1px 0 0;
+}
+
+#header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    /*font-family: 'Alegreya SC', serif;*/
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 3em;
+}
+
+h2 {
+    /*background-color: #ededed;*/
+    font-size: 1.6em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h3 {
+    color: #D51007;
+    font-size: 1.5em;
+    font-style: italic;
+    border: 1px solid rgb(230,230,230);
+    border-width: 1px 0 0 0;
+    padding-top: 15px;
+}
+
+.calendar table {
+    margin: 0 auto;
+}
+
+.calendar th {
+    width: 22px;
+}
+
+.calendar td {
+    text-align: center;
+}
