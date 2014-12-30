@@ -34,10 +34,20 @@ html
               a(href='/training') Ironman
             li
               a(href='/contact') Hafa samband
+        #social
+          a(href='http://www.facebook.com/hrafn')
+            img(src='/webicons/webicon-facebook.svg', width='24')
+          a(href='http://www.github.com/krummi')
+            img(src='/webicons/webicon-github.svg', width='24')
+          a(href='http://is.linkedin.com/in/hrafneiriksson')
+            img(src='/webicons/webicon-linkedin.svg', width='24')
+          a(href='http://open.spotify.com/user/hrafn.eiriksson')
+            img(src='/webicons/webicon-spotify.svg', width='24')
+
         #footer
-          &copy; <a href="mailto:hrafn (at) eiriksson.is">Hrafn Eiríksson</a>, 2014&dash;2015
+          &copy; <a href="mailto:hrafn (at) eiriksson.is">Hrafn Eiríksson</a>, 2014&mdash;2015
     #content
-      h2 What is this?
+      block content
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
