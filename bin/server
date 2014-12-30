@@ -3,8 +3,20 @@
 var app = require('../lib/app');
 var log = require('../lib/helpers/logger')
 var models = require('../lib/models');
+var rest = require('epilogue');
 
-app.set('port', process.env.PORT || 3000);
+var sequelize = models.sequelize;
+var Activity = models.Activity;
+
+rest.initialize({
+  app: app,
+  sequelize: sequelize
+});
+
+var activities = rest.resource({
+  model: Activity,
+  endpoints: ['/activities', '/activities/:id']
+});
 
 models.sequelize.sync({ force: true }).then(function () {
   var server = app.listen(app.get('port'), function() {
