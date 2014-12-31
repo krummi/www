@@ -1,0 +1,5 @@
+//= require 'admin/jquery-ui'
+//= require 'admin/editor'
+//= require 'admin/blogs'
+//= require 'admin/typeahead'
+//= require 'admin/bootstrap-tagsinput'

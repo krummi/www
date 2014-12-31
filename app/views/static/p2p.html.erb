@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>
+      Writings
+      <span style="float: right;">
+        <a href="/p2p/rss" style="color: #ccc;"><i class="fa fa-rss"></i></a>
+      </span>
+    </h2>
+    <% @blogs.each do |blog| %>
+      <div class="blog-row">
+        <h3><a href="<%= short_blog_path(blog) %>"><%= blog.title %></a></h3>
+        <span class="timestamp"><%= blog.published_at.strftime('%B %-d, %Y') %></span>
+        <!-- TODO: November 6th, 2013 -->
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h2>Roadmap</h2>
+    6. desember - PlanetLab
+  </div>
+</div>
