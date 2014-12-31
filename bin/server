@@ -18,6 +18,27 @@ var activities = rest.resource({
   endpoints: ['/activities', '/activities/:id']
 });
 
+function authenticate(req, res, context) {
+  var authHeader = req.headers['authorization'];
+  if (!authHeader) {
+    res.status(403).json({ error: 'unauthorized' });
+    context.stop();
+    return;
+  }
+  var accessToken = authHeader.split('Bearer ')[1];
+  if (accessToken !== process.env.ACCESS_TOKEN) {
+    res.status(403).json({ error: 'unauthorized' });
+    context.stop();
+    return;
+  }
+
+  context.continue();
+}
+
+activities.create.auth(authenticate);
+activities.update.auth(authenticate);
+activities.delete.auth(authenticate);
+
 models.sequelize.sync({ force: true }).then(function () {
   var server = app.listen(app.get('port'), function() {
     log.info('express server listening on port ' + server.address().port);
