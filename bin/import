@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var Strava = require('../lib/strava');
+var models = require('../lib/models');
+var log = require('../lib/helpers/logger');
+var _ = require('lodash');
+
+var Activity = models.Activity;
+
+Activity.findOne({
+  order: 'id DESC'
+})
+.then(function (activity) {
+  if (activity == null) {
+    log.info('no activity was found');
+  } else {
+    log.debug(activity);
+  }
+})
+.catch(function (err) {
+  log.error({ err: err }, 'err hit when fetching activity');
+});
+
+var strava = new Strava({
+  accessToken: 'f2877b070e0172315d80bdcd21f7acd028f08851'
+//  updatedAt: '2014-12-27T14:32:02+00:00'
+});
+
+strava.fetch(function (err, items) {
+  if (err) {
+    log.error({ err: err }, 'err hit when importing from Strava...');
+  }
+
+  Activity.bulkCreate(items)
+  .then(function (items) {
+    log.info('successfully imported %d items from Strava', items.length);
+  })
+  .catch(function (err) {
+    log.error({ err: err }, 'error when inserting items from Strava.');
+  })
+});
