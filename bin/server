@@ -39,7 +39,7 @@ activities.create.auth(authenticate);
 activities.update.auth(authenticate);
 activities.delete.auth(authenticate);
 
-models.sequelize.sync({ force: true }).then(function () {
+models.sequelize.sync().then(function () {
   var server = app.listen(app.get('port'), function() {
     log.info('express server listening on port ' + server.address().port);
   });
