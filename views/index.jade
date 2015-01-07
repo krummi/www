@@ -3,4 +3,10 @@ extends layout
 block content
   script(type='text/javascript').
     var activities = !{activities};
-  h2 Coming soon
+    var commutes = !{commuteData};
+
+  h2 Hjólað í vinnuna
+    svg#commute(height=100, width=500)
+      rect.yes(width=10, height=10, x=0, y=0)
+      rect.yes(width=10, height=10, x=0, y=0)
+      rect.yes(width=10, height=10, x=0, y=0)
