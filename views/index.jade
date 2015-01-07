@@ -3,10 +3,13 @@ extends layout
 block content
   script(type='text/javascript').
     var activities = !{activities};
-    var commutes = !{commuteData};
+    var commutes = !{commutes};
 
   h2 Hjólað í vinnuna
-    svg#commute(height=100, width=500)
-      rect.yes(width=10, height=10, x=0, y=0)
-      rect.yes(width=10, height=10, x=0, y=0)
-      rect.yes(width=10, height=10, x=0, y=0)
+  svg#commutes(height=50, width=500)
+  div#commutes-progress-bar-info
+    .left.
+      3/3 DAGAR (100%)
+    .right.
+      257 EFTIR
+  div#commutes-progress-bar

@@ -111,17 +111,42 @@ body {
   }
 }
 
-#commute {
+#commutes {
   display: block;
   margin-top: 10px;
   clear: both;
 }
 
-#commute rect {
+#commutes rect {
   shape-rendering: crispedges;
 }
 
-#commute .yes {
-  background-color: red;
+#commutes .yes {
+  background-color: green;
   fill: #669d45;
+}
+
+#commutes .no {
+  background-color: red;
+}
+
+#commutes .na {
+  background-color: #ededed;
+  fill: #ededed;
+}
+
+#commutes-progress-bar-info {
+  margin-top: 20px;
+  font-size: 0.9em;
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}
+
+#commutes-progress-bar {
+  line-height: 3px;
+  clear: both;
 }
