@@ -1,4 +1,4 @@
-'use strict';
+
 
 var RECT_SIZE = 9;
 var GUTTER_SIZE = 1;
@@ -100,6 +100,50 @@ if (commutes) {
       color: 'lightgray'
     }]
   });
+
+
+  // Current week stuff
+  var startColor = '#FC5B3F';
+  var endColor = '#669d45';
+
+  var keys = Object.keys(curWeek.summary);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    var isMapping = { Ride: 'Hjól', Run: 'Hlaup', Swim: 'Sund' };
+    var decimal = curWeek.summary[key] / 3600;
+    var row = '<tr>' +
+      '<td class="sport">' + isMapping[key] + '</td>' +
+      '<td class="actual">' + pretty(decimal) + '</td>' +
+      '<td id="' + key + '-container" class="progress-containers"></td>' +
+      '<td class="planned">3klst 30m</td>'+
+      '</tr>';
+    $('#current-week-table').append(row);
+
+    // The progress bar for this item!
+    var element = document.getElementById(key + '-container');
+    var circle = new ProgressBar.Circle(element, {
+      color: '#669d45',
+      trailColor: '#eee',
+      trailWidth: 1,
+      duration: 2000,
+      easing: 'bounce',
+      strokeWidth: 5,
+      text: {
+        value: '0'
+      },
+
+      // Set default step function for all animate calls
+      step: function(state, c) {
+        c.setText((circle.value() * 100).toFixed(0) + '%');
+        c.path.setAttribute('stroke', state.color);
+      }
+    });
+
+    circle.animate(1, {
+      from: {color: startColor},
+      to: {color: endColor}
+    });
+  }
 }
 
 function pretty(decimal) {
