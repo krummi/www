@@ -1,7 +1,7 @@
 'use strict';
 
-var RECT_SIZE = 8;
-var GUTTER_SIZE = 2;
+var RECT_SIZE = 9;
+var GUTTER_SIZE = 1;
 var SVG_NAMESPACE = "http://www.w3.org/2000/svg";
 
 if (commutes) {
@@ -70,6 +70,9 @@ if (commutes) {
     plotOptions: {
       series: {
         stacking: 'normal'
+      },
+      bar: {
+        borderWidth: 0
       }
     },
     credits: {
@@ -88,13 +91,13 @@ if (commutes) {
       data: weeks.runs,
       color: '#669d45'
     }, {
-      name: 'Hjól',
-      data: weeks.rides,
-      color: 'lightgray'
-    }, {
       name: 'Sund',
       data: weeks.swims,
       color: 'rgb(85, 98, 109)'
+    }, {
+      name: 'Hjól',
+      data: weeks.rides,
+      color: 'lightgray'
     }]
   });
 }

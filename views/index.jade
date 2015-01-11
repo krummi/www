@@ -5,13 +5,16 @@ block content
     var weeks = !{weeks};
     var commutes = !{commutes};
 
-  h2 Æfingar
-  div#weekly-activities
+  h2 Vikan í æfingum
+  #current-week-activities
+
+  h2 Árið í æfingum
+  #weekly-activities
     #weekly-graph-container
 
   h2 Hjólað í vinnuna
   svg#commutes(height=50, width=500)
-  div#commutes-progress-bar-info
+  #commutes-progress-bar-info
     .left
     .right
-  div#commutes-progress-bar
+  #commutes-progress-bar
