@@ -38,8 +38,69 @@ if (commutes) {
     color: '#669d45',
     trailColor: '#EDEDED'
   });
-  var percent = commutes.actual / commutes.possible;
-  line.animate(percent);
+  var ratio = commutes.actual / commutes.possible;
+  line.animate(ratio);
+  var percentage = ratio * 100;
+
+  var left = commutes.actual + '/' + commutes.possible + ' DAGAR (' + percentage + '%)';
+  var right= commutes.left + ' EFTIR';
+  $('#commutes-progress-bar-info > .left').text(left);
+  $('#commutes-progress-bar-info > .right').text(right);
+
+
+  // Hours
+  $('#weekly-graph-container').highcharts({
+    chart: {
+      type: 'bar',
+      height: 150,
+      backgroundColor: 'rgb(244, 244, 244)'
+    },
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: weeks.titles
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Klukkustundir'
+      }
+    },
+    plotOptions: {
+      series: {
+        stacking: 'normal'
+      }
+    },
+    credits: {
+      enabled: false
+    },
+    exporting: {
+      enabled: false
+    },
+    tooltip: {
+      formatter: function() {
+        return '<b>' + this.x + '</b> (' + this.series.name + '): ' + pretty(this.y);
+      }
+    },
+    series: [{
+      name: 'Hlaup',
+      data: weeks.runs,
+      color: '#669d45'
+    }, {
+      name: 'Hjól',
+      data: weeks.rides,
+      color: 'lightgray'
+    }, {
+      name: 'Sund',
+      data: weeks.swims,
+      color: 'rgb(85, 98, 109)'
+    }]
+  });
+}
+
+function pretty(decimal) {
+  return Math.floor(decimal) + 'klst ' + Math.round(((decimal % 1) * 60)) + 'm';
 }
 
 function getRectString(x, y, type) {

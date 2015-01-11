@@ -2,14 +2,16 @@ extends layout
 
 block content
   script(type='text/javascript').
-    var activities = !{activities};
+    var weeks = !{weeks};
     var commutes = !{commutes};
+
+  h2 Æfingar
+  div#weekly-activities
+    #weekly-graph-container
 
   h2 Hjólað í vinnuna
   svg#commutes(height=50, width=500)
   div#commutes-progress-bar-info
-    .left.
-      3/3 DAGAR (100%)
-    .right.
-      257 EFTIR
+    .left
+    .right
   div#commutes-progress-bar
