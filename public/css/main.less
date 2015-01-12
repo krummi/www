@@ -52,6 +52,10 @@ body {
       right: 20px;
       font-size: 0.8em;
       color: @bg-color;
+      a {
+        color: @bg-color;
+        text-decoration: underline;
+      }
     }
 
     #social {
@@ -160,31 +164,34 @@ body {
   font-size: 0.9em;
 
   #current-week-table {
+    td {
+      vertical-align: top;
+    }
 
     .progressbar-text {
       font-size: 0.7em;
-    }
-
-    tr {
-      height: 30px;
+      top: 40% !important;
     }
 
     .sport {
+      padding-top: 3px;
       font-weight: bold;
     }
 
     .actual {
+      padding-top: 3px;
       text-align: right;
       padding-right: 10px;
     }
 
     .planned {
+      padding-top: 3px;
       padding-left: 10px;
     }
 
     .progress-containers {
       width: 35px;
-      padding-top: 9px;
+
     }
   }
 }

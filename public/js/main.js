@@ -1,4 +1,4 @@
-
+'use strict';
 
 var RECT_SIZE = 9;
 var GUTTER_SIZE = 1;
@@ -47,12 +47,11 @@ if (commutes) {
   $('#commutes-progress-bar-info > .left').text(left);
   $('#commutes-progress-bar-info > .right').text(right);
 
-
   // Hours
   $('#weekly-graph-container').highcharts({
     chart: {
       type: 'bar',
-      height: 150,
+      height: 180,
       backgroundColor: 'rgb(244, 244, 244)'
     },
     title: {
@@ -106,16 +105,17 @@ if (commutes) {
   var startColor = '#FC5B3F';
   var endColor = '#669d45';
 
-  var keys = Object.keys(curWeek.summary);
+  var keys = Object.keys(curWeek.actual);
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     var isMapping = { Ride: 'Hjól', Run: 'Hlaup', Swim: 'Sund' };
-    var decimal = curWeek.summary[key] / 3600;
+    var actual = curWeek.actual[key] / 3600;
+    var planned = curWeek.planned[key];
     var row = '<tr>' +
       '<td class="sport">' + isMapping[key] + '</td>' +
-      '<td class="actual">' + pretty(decimal) + '</td>' +
+      '<td class="actual">' + pretty(actual) + '</td>' +
       '<td id="' + key + '-container" class="progress-containers"></td>' +
-      '<td class="planned">3klst 30m</td>'+
+      '<td class="planned">' + pretty(planned) + '</td>'+
       '</tr>';
     $('#current-week-table').append(row);
 
@@ -147,7 +147,12 @@ if (commutes) {
 }
 
 function pretty(decimal) {
-  return Math.floor(decimal) + 'klst ' + Math.round(((decimal % 1) * 60)) + 'm';
+  var minutes = Math.round(((decimal % 1) * 60));
+  var out = Math.floor(decimal) + 'klst';
+  if (minutes > 0) {
+    out += ' ' + minutes + 'm';
+  }
+  return out;
 }
 
 function getRectString(x, y, type) {
