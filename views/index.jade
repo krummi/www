@@ -6,17 +6,20 @@ block content
     var commutes = !{commutes};
     var curWeek = !{curWeek};
 
-  h2 Vikan í æfingum
-  #current-week-activities
-    table#current-week-table(width='100%', cellpadding=0, cellspacing=0)
+  .page-panel
+    h2 Vikan í æfingum
+    #current-week-activities
+      table#current-week-table(width='100%', cellpadding=0, cellspacing=0)
 
-  h2 Árið í æfingum
-  #weekly-activities
-    #weekly-graph-container
+  .page-panel
+    h2 Árið í æfingum
+    #weekly-activities.page-panel
+      #weekly-graph-container
 
-  h2 Hjólað í vinnuna
-  svg#commutes(height=50, width=500)
-  #commutes-progress-bar-info
-    .left
-    .right
-  #commutes-progress-bar
+  .page-panel
+    h2 Hjólað í vinnuna
+    svg#commutes(height=50, width=500)
+    #commutes-progress-bar-info
+      .left
+      .right
+    #commutes-progress-bar

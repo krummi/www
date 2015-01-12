@@ -140,8 +140,8 @@ if (commutes) {
     });
 
     circle.animate(1, {
-      from: {color: startColor},
-      to: {color: endColor}
+      from: { color: startColor },
+      to: { color: endColor }
     });
   }
 }
