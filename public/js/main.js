@@ -111,6 +111,7 @@ if (commutes) {
     var isMapping = { Ride: 'Hjól', Run: 'Hlaup', Swim: 'Sund' };
     var actual = curWeek.actual[key] / 3600;
     var planned = curWeek.planned[key];
+    var ratio = Math.min(actual / planned, 1.0);
     var row = '<tr>' +
       '<td class="sport">' + isMapping[key] + '</td>' +
       '<td class="actual">' + pretty(actual) + '</td>' +
@@ -129,17 +130,17 @@ if (commutes) {
       easing: 'bounce',
       strokeWidth: 5,
       text: {
-        value: '0'
+        value: ratio
       },
 
       // Set default step function for all animate calls
       step: function(state, c) {
-        c.setText((circle.value() * 100).toFixed(0) + '%');
+        c.setText((c.value() * 100).toFixed(0) + '%');
         c.path.setAttribute('stroke', state.color);
       }
     });
 
-    circle.animate(1, {
+    circle.animate(ratio, {
       from: { color: startColor },
       to: { color: endColor }
     });
