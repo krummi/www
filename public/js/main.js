@@ -40,10 +40,10 @@ if (commutes) {
   });
   var ratio = commutes.actual / commutes.possible;
   line.animate(ratio);
-  var percentage = ratio * 100;
+  var percentage = Math.round(ratio * 100);
 
   var left = commutes.actual + '/' + commutes.possible + ' DAGAR (' + percentage + '%)';
-  var right= commutes.left + ' EFTIR';
+  var right = commutes.left + ' EFTIR';
   $('#commutes-progress-bar-info > .left').text(left);
   $('#commutes-progress-bar-info > .right').text(right);
 
