@@ -44,12 +44,19 @@ function sync(accessToken) {
     var toCreate = _.difference(externalIds, localIds);
     // var toUpdate = _.difference(externalIds, toCreate);
 
-    log.debug({ creating: toCreate });
+    if (toCreate.length === 0) {
+      // We're done here.
+      log.info('nothing to do, exiting.');
+      return;
+    }
 
     // Creation
     var formattedStravaActivities = _.map(toCreate, function (id) {
       return formatActivity(stravaActivitiesById[id]);
     });
+
+    log.info({ creating: toCreate }, 'adding activities');
+    log.info({ activities: formattedStravaActivities });
 
     return Activity.bulkCreate(formattedStravaActivities);
   })
