@@ -51,7 +51,7 @@ if (commutes) {
   $('#weekly-graph-container').highcharts({
     chart: {
       type: 'bar',
-      height: 220,
+      height: 400,
       backgroundColor: 'rgb(244, 244, 244)'
     },
     title: {
