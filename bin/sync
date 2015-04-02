@@ -27,7 +27,10 @@ function sync(accessToken) {
 
   Promise.all([
     request.getAsync(options),
-    Activity.findAll({ order: [ [ 'startTime', 'DESC' ] ], limit: NO_OF_ACTIVITIES })
+    Activity.findAll({
+      attributes: [ 'externalId' ],
+      order: [ [ 'startTime', 'DESC' ] ]
+    })
   ])
   .spread(function (strava, localActivities) {
     var res = strava[0];
