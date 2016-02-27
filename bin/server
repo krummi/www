@@ -1,46 +1,8 @@
 #!/usr/bin/env node
+'use strict';
 
-var app = require('../lib/app');
-var log = require('../lib/helpers/logger')
-var models = require('../lib/models');
-var rest = require('epilogue');
-
-var sequelize = models.sequelize;
-var Activity = models.Activity;
-
-rest.initialize({
-  app: app,
-  sequelize: sequelize
-});
-
-var activities = rest.resource({
-  model: Activity,
-  endpoints: ['/activities', '/activities/:id']
-});
-
-function authenticate(req, res, context) {
-  var authHeader = req.headers['authorization'];
-  if (!authHeader) {
-    res.status(403).json({ error: 'unauthorized' });
-    context.stop();
-    return;
-  }
-  var accessToken = authHeader.split('Bearer ')[1];
-  if (accessToken !== process.env.ACCESS_TOKEN) {
-    res.status(403).json({ error: 'unauthorized' });
-    context.stop();
-    return;
-  }
-
-  context.continue();
-}
-
-activities.create.auth(authenticate);
-activities.update.auth(authenticate);
-activities.delete.auth(authenticate);
-
-models.sequelize.sync().then(function () {
-  var server = app.listen(app.get('port'), function() {
-    log.info('express server listening on port ' + server.address().port);
-  });
+let app = require('../lib/app');
+let log = require('node-oz-helpers').getLogger();
+let server = app.listen(app.get('port'), () => {
+  log.info('express server listening on port ' + server.address().port);
 });

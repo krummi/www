@@ -1,19 +1,21 @@
 // @bg-color: rgb(56, 63, 73);
-@bg-color: rgb(244, 244, 244);
-@sidebar-color: rgb(56, 63, 73);
+@bg-color: #f5f4f2;
+@sidebar-color: #fff;
 @sidebar-lighter-color: rgb(85, 98, 109);
+@text-color: #222;
+@border-color: darken(@bg-color, 10%);
 
 body {
   font-family: Lato, Arimo, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.8;
-  font-size: 17px;
+  font-size: 18px;
   background-color: @bg-color;
 }
 
 #content {
   position: absolute;
-  left: 40%;
+  left: 400px;
   padding-left: 30px;
   padding-top: 50px;
 }
@@ -23,13 +25,13 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 40%;
-  right: 60%;
+  width: 320px;
   background-color: @sidebar-color;
-  padding-right: 10px;
+  padding-right: 25px;
+  box-shadow: 0 1px 3px hsla(0,0%,39%,.15);
 
   #sidebar-inner {
-    width: 250px;
+    width: 270px;
     float: right;
 
     #intro {
@@ -40,9 +42,8 @@ body {
       }
       h1 {
         text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1em;
-        color: @bg-color;
+        font-size: 1.2em;
+        color: @text-color;
       }
     }
 
@@ -51,9 +52,9 @@ body {
       bottom: 15px;
       right: 20px;
       font-size: 0.8em;
-      color: @bg-color;
+      color: @text-color;
       a {
-        color: @bg-color;
+        color: @text-color;
         text-decoration: underline;
       }
     }
@@ -74,38 +75,39 @@ body {
         margin: 0;
         padding: 0;
 
-
         li {
-          border-top-style: dotted;
+          border-top-style: solid;
           border-top-width: 1px;
-          border-top-color: @sidebar-lighter-color;
+          border-top-color: @border-color;
+          text-align: right;
 
           a {
             display: block;
             text-transform: uppercase;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
-            color: @bg-color;
+            color: @text-color;
             padding: 7px 10px;
             width: 100%;
           }
 
           &:last-child {
-            border-bottom-style: dotted;
+            border-bottom-style: solid;
             border-bottom-width: 1px;
-            border-bottom-color: @sidebar-lighter-color;
+            border-bottom-color: @border-color;
           }
         }
         li.active {
           a {
-            color: #fff !important;
+            color: @text-color !important;
+            font-weight: bold;
           }
         }
         li:hover {
-          background-color: @sidebar-lighter-color;
+          background-color: @bg-color;
           a {
-            color: @bg-color !important;
+            color: @text-color !important;
             text-decoration: none;
           }
         }
