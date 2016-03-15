@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "Personal Finance in the 21st Century"
-category: "web"
+layout: blog
+title: Personal Finance in the 21st Century
+categories: web
 ---
-Money &mdash; the source of all evil. Or something. Well.... whaevah.
+> Money &mdash; the source of, well, endless analytical possibilities!
 
 I'm one of the people who spends way too much time analyzing my personal finances. I used to spend even more time doing this when the categorization of transactions was a manual task (yes, it involved Excel). Thankfully, there are now services that do the collection and categorization of transactions for you. The best known such service is probably [Mint.com](https://www.mint.com/) but we don't have that in Iceland so I use [Meniga](https://www.meniga.com).
 

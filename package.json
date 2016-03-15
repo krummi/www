@@ -12,6 +12,7 @@
     "express": "~4.9.0",
     "jade": "~1.6.0",
     "lodash": "^2.4.1",
+    "marked": "^0.3.5",
     "moment": "^2.8.4",
     "request": "^2.51.0",
     "serve-favicon": "~2.1.3"
