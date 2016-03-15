@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h2 Personal Finance in the 21st Century
-  p Doing stuff is cool. I like it.
+  h2 Blogs
+  for blog in blogs
+    a(href="/#{blog.slug}")= blog.metadata.title
+    span.
+      &nbsp;[#{blog.time}]
+      
