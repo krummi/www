@@ -15,7 +15,7 @@ gulp.task('nodemon', ['less'], function () {
   console.log('running nodemon...');
   nodemon({
     script: 'bin/server',
-    ext: 'js, jade, html, less',
+    ext: 'js, jade, html, less, md',
     ignore: ['README.md', 'node_modules/**', '.DS_Store'],
     tasks: ['less']
   });

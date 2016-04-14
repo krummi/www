@@ -22,11 +22,35 @@ body {
   font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
 
-.blog-body {
-  img {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
+.blog {
+  .image {
+    margin: 40px auto;
+    display: block;
+    text-align: center;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    figcaption {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 0.8em;
+    }
+  }
+  .divider {
+    margin: 30px 0 40px 0;
+    text-align: center;
+    font-family: "Open Sans","Helvetica Neue",sans-serif;
+    font-weight: 400;
+    letter-spacing: 15px;
+  }
+  p {
+    margin: 0 0 15px;
+    line-height: 30px;
+  }
+  blockquote {
+    color: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -54,6 +78,12 @@ body {
         text-transform: uppercase;
         font-size: 1.2em;
         color: @text-color;
+        a {
+          color: @text-color;
+        }
+        a:hover {
+          text-decoration: none;
+        }
       }
     }
 
