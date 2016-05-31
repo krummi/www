@@ -26,7 +26,7 @@ But &mdash; like any self-respectable hacker I wasn't going to be stopped by a l
 
 My plan was to create a dashboard that I could look at and _instantly_ see how I was doing with regards to my spending goal for that month. Furthermore, I wanted to be able to breakdown my expenses by category and see at a glance _how_ I was spending my money.
 
-The first step towards all of this was to reverse-engineer Meniga's HTTP API. Fortunately that was almost too simple. I created a simple JS API wrapper that allows anyone to interface with Meniga's API in a simple manner [code [here](https://www.github.com/krummi/meniga-client)]. I then added a new "Finances" tab in my home-automation system (what household doesn't have a home-automation system?) and after a few hours of work I had arrived at a place where I was quite happy.
+The first step towards all of this was to reverse-engineer Meniga's HTTP API. Fortunately that was simple since most of the requests of the web app were being done over XHR. Based on the reverse-engineering process, I created a simple Node API wrapper that allows anyone to interface with Meniga's API in a simple manner [code [here](https://www.github.com/krummi/meniga-client)]. I then added a new "Finances" tab in my home-automation system (what household doesn't have a home-automation system?) and after a few hours of work I had arrived at a place where I was quite happy.
 
 
 
